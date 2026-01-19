@@ -3,73 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Longevity Health Analytics</title>
-  <meta name="description" content="Figuring out what actually works. Data-driven health optimization through self-experimentation and analysis.">
+  <title>Longevity Health Analytics - Building the Future of Health Intelligence</title>
+  <meta name="description" content="Advanced health analytics apps for iOS. Track recovery with NeuroRest, optimize nutrition with FuelSense, and prepare for Cortex - the AI-powered health intelligence hub.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
+  <nav class="nav-blur">
     <div class="container">
       <a href="index.html" class="logo">
         <img src="images/lha-logo.png" alt="Longevity Health Analytics" class="logo-img">
         <span class="logo-text">Longevity<span class="logo-accent">HA</span></span>
       </a>
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html" class="active">Apps</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="apps.html">Apps</a></li>
         <li><a href="about.html">About</a></li>
       </ul>
     </div>
   </nav>
 
   <main>
-    <section class="brand-block">
-      <img src="images/lha-logo.png" alt="Longevity Health Analytics" class="brand-logo">
-      <h2 class="brand-name">Longevity Health Analytics</h2>
-      <p class="brand-tagline">Better health through better data</p>
+    <!-- Hero Section with Gradient -->
+    <section class="hero-gradient">
+      <div class="hero-content">
+        <div class="badge">Health Tech Portfolio</div>
+        <h1 class="gradient-text">Building the Future of Health Intelligence</h1>
+        <p class="hero-subtitle">
+          Advanced analytics tools that turn health data into actionable insights.
+          Track recovery, optimize nutrition, and prepare for AI-powered health intelligence.
+        </p>
+        <div class="hero-cta">
+          <a href="#apps" class="btn-primary">Explore Apps</a>
+          <a href="about.html" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
     </section>
 
-    <section class="hero">
-      <h1>Figuring out what actually works.</h1>
-      <p>
-        Health optimization is full of noise — supplements that don't move the needle, protocols that work for someone else but not you, and advice that sounds good but lacks evidence.
-      </p>
-      <p>
-        <span class="highlight">Longevity Health Analytics</span> is where I share my own experiments, the data behind them, and what I'm learning along the way. No hype, no shortcuts — just an analytical approach to figuring out what actually improves health and performance.
-      </p>
+    <!-- NeuroRest App Section -->
+    <section class="app-section app-section-left" id="apps">
+      <div class="app-content">
+        <div class="app-badge badge-neuro">Live on App Store</div>
+        <h2>NeuroRest</h2>
+        <p class="app-tagline">Master Your Recovery</p>
+        <p class="app-description">
+          Deep sleep and HRV analysis powered by Apple Health. NeuroRest transforms your biometric data
+          into actionable recovery insights, helping you understand readiness patterns and optimize performance.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">📊</div>
+            <div>
+              <h4>Advanced Analytics</h4>
+              <p>HRV trends, sleep stages, and recovery scoring</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🎯</div>
+            <div>
+              <h4>Readiness Tracking</h4>
+              <p>Know when to push and when to rest</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📈</div>
+            <div>
+              <h4>Long-term Insights</h4>
+              <p>Pattern recognition over weeks and months</p>
+            </div>
+          </div>
+        </div>
+        <a href="https://apps.apple.com/us/app/neurorest/id6754780344" class="app-store-btn btn-neuro" target="_blank" rel="noopener">
+          <span class="app-store-icon">📱</span>
+          Download on App Store
+        </a>
+      </div>
+      <div class="app-visual">
+        <div class="phone-mockup mockup-neuro">
+          <div class="phone-screen">
+            <img src="images/IMG_1764.PNG" alt="NeuroRest sleep analysis dashboard with HRV and recovery data" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2>What I'm Working On</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>N=1 Experiments</h3>
-          <p>Documenting my own health interventions — what I'm testing, what the data shows, and what I'm concluding.</p>
-          <a href="blog.html" class="card-link">
-            Read the blog →
-          </a>
+    <!-- FuelSense App Section -->
+    <section class="app-section app-section-right">
+      <div class="app-content">
+        <div class="app-badge badge-fuel">Live on App Store</div>
+        <h2>FuelSense</h2>
+        <p class="app-tagline">Precision Nutrition Tracking</p>
+        <p class="app-description">
+          Smart nutrition tracking that actually makes sense. FuelSense combines barcode scanning,
+          macro tracking, and Apple Health integration to give you complete visibility into your nutrition patterns.
+        </p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon">🔍</div>
+            <div>
+              <h4>Smart Scanning</h4>
+              <p>Instant barcode recognition with full nutritional data</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <h4>Macro Intelligence</h4>
+              <p>Real-time tracking of proteins, carbs, and fats</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔄</div>
+            <div>
+              <h4>Health Sync</h4>
+              <p>Seamless integration with Apple Health ecosystem</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Health Analytics Apps</h3>
-          <p>Tools I've built to track and analyze health data — NeuroRest for sleep/recovery and FuelSense for nutrition.</p>
-          <a href="apps.html" class="card-link">
-            View the apps →
-          </a>
+        <a href="https://apps.apple.com/us/app/fuelsense-nutrition/id6757407347" class="app-store-btn btn-fuel" target="_blank" rel="noopener">
+          <span class="app-store-icon">📱</span>
+          Download on App Store
+        </a>
+      </div>
+      <div class="app-visual">
+        <div class="phone-mockup mockup-fuel">
+          <div class="phone-screen">
+            <img src="images/IMG_1762.PNG" alt="FuelSense weekly nutrition trends with macro tracking charts" style="width: 100%; height: 100%; object-fit: cover; border-radius: 32px;">
+          </div>
         </div>
-        <div class="card">
-          <h3>Data-Driven Decisions</h3>
-          <p>How I think about health decisions — evaluating interventions, interpreting biomarkers, and calibrating protocols.</p>
-          <a href="about.html" class="card-link">
-            Learn more →
-          </a>
+      </div>
+    </section>
+
+    <!-- Cortex Coming Soon Section -->
+    <section class="app-section app-section-cortex">
+      <div class="cortex-container">
+        <div class="cortex-badge">
+          <span class="pulse-dot"></span>
+          Coming Soon - Q2 2026
         </div>
+        <h2 class="gradient-text-cortex">Cortex</h2>
+        <p class="cortex-tagline">AI-Powered Health Intelligence Hub</p>
+        <p class="cortex-description">
+          The next evolution in health analytics. Cortex will unite data from NeuroRest, FuelSense,
+          and beyond into a single AI-powered intelligence platform that doesn't just track—it understands,
+          predicts, and guides.
+        </p>
+        <div class="cortex-features">
+          <div class="cortex-feature">
+            <div class="cortex-icon">🧠</div>
+            <h4>Unified Intelligence</h4>
+            <p>All your health data, one intelligent system</p>
+          </div>
+          <div class="cortex-feature">
+            <div class="cortex-icon">🔮</div>
+            <h4>Predictive Analytics</h4>
+            <p>AI-powered insights that anticipate trends</p>
+          </div>
+          <div class="cortex-feature">
+            <div class="cortex-icon">⚡</div>
+            <h4>Adaptive Guidance</h4>
+            <p>Personalized recommendations that evolve with you</p>
+          </div>
+        </div>
+        <div class="cortex-visual">
+          <div class="cortex-mockup">
+            <div class="cortex-glow"></div>
+            <div class="placeholder-content cortex-placeholder-content">
+              <div class="placeholder-icon">🧠</div>
+              <p>Cortex</p>
+              <small>AI Health Intelligence Platform</small>
+            </div>
+          </div>
+        </div>
+        <div class="waitlist-form">
+          <p class="waitlist-text">Be first to experience the future of health intelligence</p>
+          <div class="waitlist-cta">
+            <a href="about.html" class="btn-cortex">Get Early Access Updates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+      <div class="philosophy-content">
+        <h2>Built on Data, Driven by Results</h2>
+        <p>
+          Health optimization is full of noise. These apps cut through it with analytics that matter—turning
+          raw biometric data into clear, actionable insights. No hype, no shortcuts, just tools built for
+          people who want to understand what actually works.
+        </p>
+        <a href="blog.html" class="link-arrow">Read about the methodology →</a>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Longevity Health Analytics</p>
+    <div class="footer-content">
+      <p>© 2025 Longevity Health Analytics</p>
+      <p class="footer-tagline">Better health through better data</p>
+    </div>
   </footer>
+
+  <script src="animations.js"></script>
 </body>
 </html>
