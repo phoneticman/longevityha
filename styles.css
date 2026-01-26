@@ -703,8 +703,8 @@ main {
 }
 
 .cortex-mockup {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 1200px;
   position: relative;
   display: flex;
   align-items: center;
@@ -899,8 +899,8 @@ footer {
   }
 
   .cortex-mockup {
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 100%;
   }
 
   main {
