@@ -308,6 +308,7 @@
           <span class="pulse-dot"></span>
           Coming Q2 2026
         </div>
+        <img src="images/cortex-icon.png" alt="Cortex Logo" style="width: 180px; height: 180px; margin: 0 auto 2rem; display: block; filter: drop-shadow(0 10px 40px rgba(16, 185, 129, 0.4));">
         <h1>Cortex</h1>
         <p class="cortex-hero-subtitle">
           The AI-powered intelligence layer that unifies your health data. Ask natural questions,
@@ -371,27 +372,14 @@
               <text x="50" y="155" text-anchor="middle" fill="#a1a1aa" font-size="13">Workouts</text>
             </g>
 
-            <!-- Cortex (center) - with logo -->
+            <!-- Cortex (center) - with actual logo -->
             <g transform="translate(500, 300)">
               <!-- Outer glow rings -->
               <circle cx="0" cy="0" r="110" fill="url(#cortexGlowOuter)" opacity="0.2"/>
               <circle cx="0" cy="0" r="90" fill="url(#cortexGlowOuter)" opacity="0.25"/>
 
-              <!-- Central hexagon with all colors -->
-              <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30"
-                       fill="url(#ecosystemGradient)" stroke="url(#cortexStroke)" stroke-width="4"
-                       filter="url(#cortexFilter)"/>
-
-              <!-- Neural network pattern inside -->
-              <g stroke="url(#innerPattern)" stroke-width="2.5" opacity="0.5">
-                <line x1="0" y1="-40" x2="0" y2="40"/>
-                <line x1="-35" y1="-20" x2="35" y2="-20"/>
-                <line x1="-35" y1="20" x2="35" y2="20"/>
-                <circle cx="0" cy="-40" r="4" fill="#3b82f6"/>
-                <circle cx="-35" cy="0" r="4" fill="#f97316"/>
-                <circle cx="35" cy="0" r="4" fill="#a855f7"/>
-                <circle cx="0" cy="40" r="4" fill="#10b981"/>
-              </g>
+              <!-- Cortex Logo (PNG) -->
+              <image href="images/cortex-icon.png" x="-65" y="-65" width="130" height="130" filter="url(#cortexFilter)"/>
 
               <!-- Label -->
               <text x="0" y="105" text-anchor="middle" fill="#10b981" font-size="26" font-weight="bold">CORTEX</text>
