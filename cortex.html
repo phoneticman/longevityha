@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cortex – AI-Powered Health Intelligence Hub</title>
-  <meta name="description" content="Cortex unifies data from NeuroRest, FuelSense, KineticEdge, and LabVault into a conversational AI health intelligence platform. Get contextualized insights powered by Claude AI.">
+  <meta name="description" content="Cortex unifies data from NeuroRest, Jaan, FuelSense, KineticEdge, and LabVault into a conversational AI health intelligence platform. Get contextualized insights powered by Claude AI.">
   <link rel="stylesheet" href="styles.css">
   <style>
     /* Cortex-specific styles */
@@ -189,7 +189,8 @@
     .insight-card:nth-child(2) { border-left-color: #f97316; }
     .insight-card:nth-child(3) { border-left-color: #a855f7; }
     .insight-card:nth-child(4) { border-left-color: #00C9A7; }
-    .insight-card:nth-child(5) { border-left-color: #10b981; }
+    .insight-card:nth-child(5) { border-left-color: #f59e0b; }
+    .insight-card:nth-child(6) { border-left-color: #10b981; }
 
     .insight-card:hover {
       transform: translateX(5px);
@@ -329,29 +330,43 @@
         </div>
 
         <div class="ecosystem-visual">
-          <svg width="100%" height="600" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" style="max-width: 900px; margin: 0 auto; display: block;">
+          <svg width="100%" height="650" viewBox="0 0 1000 650" xmlns="http://www.w3.org/2000/svg" style="max-width: 900px; margin: 0 auto; display: block;">
             <!-- Animated connection lines -->
             <g opacity="0.4">
-              <!-- NeuroRest (top-left) to Cortex (center) -->
-              <line x1="200" y1="150" x2="460" y2="280" stroke="url(#neuroLine)" stroke-width="3" stroke-dasharray="8,4">
+              <!-- Jaan (top center) to Cortex -->
+              <line x1="500" y1="100" x2="500" y2="260" stroke="url(#jaanLine)" stroke-width="3" stroke-dasharray="8,4">
+                <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2.2s" repeatCount="indefinite"/>
+              </line>
+              <!-- NeuroRest (left) to Cortex -->
+              <line x1="130" y1="310" x2="410" y2="310" stroke="url(#neuroLine)" stroke-width="3" stroke-dasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2s" repeatCount="indefinite"/>
               </line>
-              <!-- FuelSense (top-right) to Cortex -->
-              <line x1="800" y1="150" x2="540" y2="280" stroke="url(#fuelLine)" stroke-width="3" stroke-dasharray="8,4">
+              <!-- FuelSense (right) to Cortex -->
+              <line x1="870" y1="310" x2="590" y2="310" stroke="url(#fuelLine)" stroke-width="3" stroke-dasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2.5s" repeatCount="indefinite"/>
               </line>
               <!-- KineticEdge (bottom-left) to Cortex -->
-              <line x1="200" y1="480" x2="460" y2="340" stroke="url(#kineticLine)" stroke-width="3" stroke-dasharray="8,4">
+              <line x1="250" y1="530" x2="460" y2="370" stroke="url(#kineticLine)" stroke-width="3" stroke-dasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="400" to="0" dur="3s" repeatCount="indefinite"/>
               </line>
               <!-- LabVault (bottom-right) to Cortex -->
-              <line x1="800" y1="480" x2="540" y2="340" stroke="url(#labvaultLine)" stroke-width="3" stroke-dasharray="8,4">
+              <line x1="750" y1="530" x2="540" y2="370" stroke="url(#labvaultLine)" stroke-width="3" stroke-dasharray="8,4">
                 <animate attributeName="stroke-dashoffset" from="400" to="0" dur="2.8s" repeatCount="indefinite"/>
               </line>
             </g>
 
-            <!-- NeuroRest (top left) -->
-            <g transform="translate(150, 100)">
+            <!-- Jaan (top center) -->
+            <g transform="translate(450, 30)">
+              <circle cx="50" cy="50" r="55" fill="url(#jaanGlow)" opacity="0.3"/>
+              <circle cx="50" cy="50" r="50" fill="url(#appBg)"/>
+              <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
+              <text x="50" y="62" text-anchor="middle" font-size="40">💍</text>
+              <text x="50" y="135" text-anchor="middle" fill="#f59e0b" font-size="16" font-weight="600">Jaan</text>
+              <text x="50" y="155" text-anchor="middle" fill="#a1a1aa" font-size="13">Oura Ring</text>
+            </g>
+
+            <!-- NeuroRest (left) -->
+            <g transform="translate(30, 260)">
               <circle cx="50" cy="50" r="55" fill="url(#neuroGlow)" opacity="0.3"/>
               <circle cx="50" cy="50" r="50" fill="url(#appBg)"/>
               <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
@@ -360,8 +375,8 @@
               <text x="50" y="155" text-anchor="middle" fill="#a1a1aa" font-size="13">Sleep & Recovery</text>
             </g>
 
-            <!-- FuelSense (top right) -->
-            <g transform="translate(750, 100)">
+            <!-- FuelSense (right) -->
+            <g transform="translate(920, 260)">
               <circle cx="50" cy="50" r="55" fill="url(#fuelGlow)" opacity="0.3"/>
               <circle cx="50" cy="50" r="50" fill="url(#appBg)"/>
               <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
@@ -370,8 +385,8 @@
               <text x="50" y="155" text-anchor="middle" fill="#a1a1aa" font-size="13">Nutrition</text>
             </g>
 
-            <!-- KineticEdge (bottom left) -->
-            <g transform="translate(150, 430)">
+            <!-- KineticEdge (bottom-left) -->
+            <g transform="translate(200, 480)">
               <circle cx="50" cy="50" r="55" fill="url(#kineticGlow)" opacity="0.3"/>
               <circle cx="50" cy="50" r="50" fill="url(#appBg)"/>
               <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
@@ -380,8 +395,8 @@
               <text x="50" y="155" text-anchor="middle" fill="#a1a1aa" font-size="13">Workouts</text>
             </g>
 
-            <!-- LabVault (bottom right) -->
-            <g transform="translate(750, 430)">
+            <!-- LabVault (bottom-right) -->
+            <g transform="translate(700, 480)">
               <circle cx="50" cy="50" r="55" fill="url(#labvaultGlow)" opacity="0.3"/>
               <circle cx="50" cy="50" r="50" fill="url(#appBg)"/>
               <circle cx="50" cy="50" r="45" fill="#1a1a2e"/>
@@ -391,7 +406,7 @@
             </g>
 
             <!-- Cortex (center) - with actual logo -->
-            <g transform="translate(500, 310)">
+            <g transform="translate(500, 330)">
               <!-- Outer glow rings -->
               <circle cx="0" cy="0" r="110" fill="url(#cortexGlowOuter)" opacity="0.2"/>
               <circle cx="0" cy="0" r="90" fill="url(#cortexGlowOuter)" opacity="0.25"/>
@@ -406,17 +421,20 @@
 
             <!-- Animated data particles -->
             <g>
+              <circle cx="0" cy="0" r="5" fill="#f59e0b" opacity="0.8">
+                <animateMotion dur="2.2s" repeatCount="indefinite" path="M 500,100 L 500,260"/>
+              </circle>
               <circle cx="0" cy="0" r="5" fill="#3b82f6" opacity="0.8">
-                <animateMotion dur="2s" repeatCount="indefinite" path="M 200,150 L 460,280"/>
+                <animateMotion dur="2s" repeatCount="indefinite" path="M 130,310 L 410,310"/>
               </circle>
               <circle cx="0" cy="0" r="5" fill="#f97316" opacity="0.8">
-                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 800,150 L 540,280"/>
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 870,310 L 590,310"/>
               </circle>
               <circle cx="0" cy="0" r="5" fill="#a855f7" opacity="0.8">
-                <animateMotion dur="3s" repeatCount="indefinite" path="M 200,480 L 460,340"/>
+                <animateMotion dur="3s" repeatCount="indefinite" path="M 250,530 L 460,370"/>
               </circle>
               <circle cx="0" cy="0" r="5" fill="#00C9A7" opacity="0.8">
-                <animateMotion dur="2.8s" repeatCount="indefinite" path="M 800,480 L 540,340"/>
+                <animateMotion dur="2.8s" repeatCount="indefinite" path="M 750,530 L 540,370"/>
               </circle>
             </g>
 
@@ -426,6 +444,11 @@
                 <stop offset="0%" style="stop-color:#2a2a3e"/>
                 <stop offset="100%" style="stop-color:#1a1a2e"/>
               </linearGradient>
+
+              <radialGradient id="jaanGlow">
+                <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.8"/>
+                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0"/>
+              </radialGradient>
 
               <radialGradient id="neuroGlow">
                 <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8"/>
@@ -451,6 +474,11 @@
                 <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.6"/>
                 <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
               </radialGradient>
+
+              <linearGradient id="jaanLine" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#f59e0b"/>
+                <stop offset="100%" style="stop-color:#10b981"/>
+              </linearGradient>
 
               <linearGradient id="neuroLine" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#3b82f6"/>
@@ -484,7 +512,7 @@
         </div>
 
         <div style="text-align: center; color: var(--color-text-muted); font-size: 0.95rem;">
-          <p>Four specialized apps feed data into one intelligent system</p>
+          <p>Five specialized apps feed data into one intelligent system</p>
         </div>
       </div>
     </section>
@@ -500,8 +528,8 @@
           <h3>Collect</h3>
           <p>
             Your health apps automatically sync data to Cortex. Sleep patterns from NeuroRest,
-            nutrition logs from FuelSense, workout performance from KineticEdge, and lab results from
-            LabVault—all flowing into one place.
+            Oura Ring data from Jaan, nutrition logs from FuelSense, workout performance from KineticEdge,
+            and lab results from LabVault—all flowing into one place.
           </p>
         </div>
 
@@ -568,6 +596,15 @@
               "Your testosterone has trended down across the last three draws—306 in December, now 201. Your SHBG
               is normal at 17.8, so it's not a binding issue. Sleep has been averaging 5.8 hours and your training
               volume spiked 30% last month. Chronic under-recovery could be a factor worth discussing with your doctor."
+            </div>
+          </div>
+
+          <div class="insight-card">
+            <div class="insight-question">"How does my Oura data compare to Apple Watch for sleep?"</div>
+            <div class="insight-answer">
+              "Jaan scored your sleep at 78 last night versus NeuroRest's 72 from Apple Watch. The difference
+              is mostly in architecture—Oura detected 18% deep sleep while Apple Watch estimated 14%. Your HRV
+              timeline from Oura shows a strong recovery spike during the first deep sleep cycle around 1am."
             </div>
           </div>
 
