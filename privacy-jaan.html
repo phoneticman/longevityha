@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaan Privacy Policy – Longevity Health Analytics</title>
+  <meta name="description" content="Privacy policy for Jaan, an Oura Ring companion app by Longevity Health Analytics.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .privacy-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .privacy-section h1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .privacy-updated {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .privacy-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section p {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .privacy-section ul li {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .privacy-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-text-muted);
+    }
+
+    .privacy-section a {
+      color: var(--color-accent-teal);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .privacy-section a:hover {
+      opacity: 0.8;
+    }
+
+    .privacy-apps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .privacy-app-tag {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-jaan {
+      background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.15));
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .privacy-section h1 {
+        font-size: 2.25rem;
+      }
+
+      .privacy-section {
+        padding: 4rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/lha-logo.png" alt="Longevity Health Analytics" class="logo-img">
+        <span class="logo-text">Longevity<span class="logo-accent">HA</span></span>
+      </a>
+      <ul>
+        <li><a href="index.html">Apps</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="cortex.html">Cortex</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="privacy-section">
+      <h1>Jaan Privacy Policy</h1>
+      <p class="privacy-updated">Last updated: March 13, 2026</p>
+
+      <div class="privacy-apps">
+        <span class="privacy-app-tag tag-jaan">Jaan — Oura Ring Companion</span>
+      </div>
+
+      <p>This privacy policy applies to Jaan ("the app"), an Oura Ring companion app published by Longevity Health Analytics ("we", "our", "us"). Jaan connects to the Oura API to retrieve your health and sleep data. We built Jaan with the same principle as all our apps: your health data belongs to you and only you.</p>
+
+      <h2>Oura Account Authorization</h2>
+      <p>Jaan uses OAuth 2.0 with PKCE to connect to your Oura account. When you sign in, you authorize Jaan to access specific data from your Oura Ring through Oura's official API. Your Oura account credentials are never seen, stored, or handled by Jaan — authentication is managed entirely by Oura's servers. You can revoke Jaan's access at any time from your Oura account settings.</p>
+
+      <h2>Data We Access from Oura</h2>
+      <p>With your permission, Jaan retrieves the following data from the Oura API:</p>
+      <ul>
+        <li>Sleep data — duration, sleep stages, heart rate, HRV, respiratory rate, movement, and breathing disturbance index</li>
+        <li>Readiness data — temperature deviation and Oura's readiness score</li>
+        <li>Blood oxygen (SpO2) — average nightly saturation</li>
+        <li>Daily stress data — stress and recovery summaries</li>
+        <li>Personal info — age, biological sex, height, and weight (for future personalization)</li>
+      </ul>
+      <p>This data is used solely to calculate your personalized sleep and readiness scores and to display health insights within the app.</p>
+
+      <h2>On-Device Storage</h2>
+      <p>All data retrieved from Oura is stored locally on your device. Jaan does not operate any external servers. Your health data, scores, tags, and settings never leave your device unless you explicitly enable the optional Cortex sync feature described below.</p>
+
+      <h2>Cortex Sync (Optional)</h2>
+      <p>Jaan includes an optional feature to sync your daily health data to Cortex, our local health intelligence platform. This sync occurs exclusively over your home network — data is sent directly from your device to your personal Cortex server running on your local machine. No data passes through the internet, our servers, or any third-party infrastructure. This feature is disabled by default and must be manually enabled.</p>
+
+      <h2>Data Collection</h2>
+      <p>Jaan does not collect, transmit, or store any personal data on external servers. We do not require account creation with us, email addresses, or any form of registration. There is no analytics, tracking, or telemetry of any kind. We do not use cookies. We do not fingerprint your device.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>Jaan connects only to the Oura API to retrieve your health data. Beyond this single integration, the app does not communicate with any third-party services. There are no analytics providers, advertising networks, or data brokers. There are no ads. There are no in-app purchases. There is no monetization of your data in any form.</p>
+
+      <h2>Data Sharing</h2>
+      <p>We do not share, sell, rent, or disclose your data to any third party. Period. Your Oura data stays on your device.</p>
+
+      <h2>Data Deletion</h2>
+      <p>Since all data is stored locally on your device, deleting the app removes all stored data. You can also revoke Jaan's access to your Oura account at any time through Oura's account settings, which prevents any further data retrieval.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>Jaan does not knowingly collect any information from anyone, including children under the age of 13. Since no personal data is collected from any user, the app is compliant with the Children's Online Privacy Protection Act (COPPA).</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>If we update this policy, the changes will be reflected on this page with an updated date. We encourage you to review this page periodically.</p>
+
+      <h2>Medical Disclaimer</h2>
+      <p>Jaan is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or medical condition. Data presented by Jaan — including sleep scores, readiness scores, HRV analysis, breathing disturbance indicators, and all other metrics — is for general informational and educational purposes only and should not be interpreted as medical advice. Always consult a qualified healthcare professional regarding any health concerns.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, you can reach us at <a href="mailto:manny@legitledger.io">manny@legitledger.io</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Longevity Health Analytics. All rights reserved.</p>
+      <p class="footer-tagline">Built with intention. Designed for longevity.</p>
+    </div>
+  </footer>
+</body>
+</html>
