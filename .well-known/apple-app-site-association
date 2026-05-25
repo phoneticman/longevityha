@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2G7TYHVPWC.dd.FuelSense"],
+        "components": [
+          { "/": "/fuelsense/r/", "comment": "FuelSense shared recipe links" },
+          { "/": "/fuelsense/r/*", "comment": "FuelSense shared recipe links (with query)" },
+          { "/": "/fuelsense/f/", "comment": "FuelSense shared food links" },
+          { "/": "/fuelsense/f/*", "comment": "FuelSense shared food links (with query)" }
+        ]
+      }
+    ]
+  }
+}

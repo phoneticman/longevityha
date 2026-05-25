@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shared Food – FuelSense</title>
+  <meta name="description" content="Someone shared a food with you in FuelSense. Install the app to import it.">
+  <link rel="stylesheet" href="../../styles.css">
+
+  <!-- Open Graph for chat-app link previews -->
+  <meta property="og:title" content="Shared Food – FuelSense">
+  <meta property="og:description" content="Someone shared a food with you. Install FuelSense to import.">
+  <meta property="og:image" content="https://longevityha.com/images/fuelsense-icon.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+
+  <style>
+    .share-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+    }
+    .share-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent-orange);
+      margin-bottom: 0.75rem;
+      text-align: center;
+    }
+    .share-title {
+      font-family: var(--font-heading);
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      background: var(--gradient-fuel);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .share-meta {
+      text-align: center;
+      color: var(--color-text-secondary);
+      margin-bottom: 2rem;
+    }
+    .share-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(8px);
+    }
+    .share-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-text);
+    }
+    .macros {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+    .macro {
+      text-align: center;
+      padding: 0.75rem 0.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 12px;
+    }
+    .macro .value {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .macro .label {
+      font-size: 0.7rem;
+      color: var(--color-text-muted);
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .tag {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--color-text-secondary);
+      padding: 0.3rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+    }
+    .cta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .cta a {
+      display: block;
+      text-align: center;
+      padding: 0.95rem 1.5rem;
+      border-radius: 14px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .cta a:hover { opacity: 0.9; }
+    .cta-primary {
+      background: var(--gradient-fuel);
+      color: white;
+    }
+    .cta-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--color-text);
+      border: 1px solid var(--glass-border);
+    }
+    .error {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--color-text-secondary);
+    }
+    .error h2 {
+      font-family: var(--font-heading);
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="../../images/lha-logo.png" alt="Longevity Health Analytics" class="logo-img">
+        <span class="logo-text">Longevity<span class="logo-accent">HA</span></span>
+      </a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/apps.html">Apps</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="share-section" id="root">
+      <div class="error">
+        <h2>Loading…</h2>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Decode the base64url payload from ?p=... and render a food preview.
+    // The JSON schema mirrors SharedFood in the iOS app — keep them in sync.
+    (function () {
+      const root = document.getElementById('root');
+
+      function showError(msg) {
+        root.innerHTML = `
+          <div class="error">
+            <h2>This food link couldn't be read</h2>
+            <p>${msg}</p>
+            <div class="cta">
+              <a class="cta-primary" href="https://apps.apple.com/us/app/fuelsense-nutrition/id6757407347">
+                Get FuelSense on the App Store
+              </a>
+            </div>
+          </div>`;
+      }
+
+      function decodePayload(b64url) {
+        const b64 = b64url.replace(/-/g, '+').replace(/_/g, '/');
+        const padded = b64 + '='.repeat((4 - b64.length % 4) % 4);
+        const binary = atob(padded);
+        const bytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        return new TextDecoder('utf-8').decode(bytes);
+      }
+
+      function fmt(n) {
+        if (typeof n !== 'number' || !isFinite(n)) return '0';
+        return Number.isInteger(n) ? n.toString() : n.toFixed(1);
+      }
+
+      function render(food) {
+        const m = food.macros || {};
+        const sub = [
+          food.brand,
+          food.servingSize != null ? `${fmt(food.servingSize)} ${escapeHtml(food.servingUnit || '')}`.trim() : null
+        ].filter(Boolean).join(' · ');
+
+        const allergens = (food.allergens || []).length
+          ? `<div class="share-card">
+              <h3>Allergens</h3>
+              <div class="tags">${food.allergens.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
+            </div>`
+          : '';
+        const flags = (food.dietaryFlags || []).length
+          ? `<div class="share-card">
+              <h3>Dietary</h3>
+              <div class="tags">${food.dietaryFlags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
+            </div>`
+          : '';
+
+        root.innerHTML = `
+          <div class="share-eyebrow">Shared Food</div>
+          <h1 class="share-title">${escapeHtml(food.name || 'Untitled Food')}</h1>
+          ${sub ? `<p class="share-meta">${sub}</p>` : ''}
+
+          <div class="share-card">
+            <h3>Per serving</h3>
+            <div class="macros">
+              <div class="macro"><div class="value">${fmt(m.calories)}</div><div class="label">cal</div></div>
+              <div class="macro"><div class="value">${fmt(m.protein)}</div><div class="label">protein</div></div>
+              <div class="macro"><div class="value">${fmt(m.carbs)}</div><div class="label">carbs</div></div>
+              <div class="macro"><div class="value">${fmt(m.fat)}</div><div class="label">fat</div></div>
+            </div>
+          </div>
+
+          ${allergens}
+          ${flags}
+
+          <div class="cta">
+            <a class="cta-primary" href="https://apps.apple.com/us/app/fuelsense-nutrition/id6757407347">
+              Get FuelSense to Import
+            </a>
+            <a class="cta-secondary" href="/apps.html">Learn more about FuelSense</a>
+          </div>`;
+      }
+
+      function escapeHtml(s) {
+        return String(s ?? '').replace(/[&<>"']/g, c => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[c]));
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const p = params.get('p');
+      if (!p) {
+        showError('No food data was attached to this link.');
+        return;
+      }
+
+      try {
+        const json = decodePayload(p);
+        const payload = JSON.parse(json);
+        if (payload.type !== 'food' || !payload.food) {
+          showError('This link is for a different kind of share.');
+          return;
+        }
+        render(payload.food);
+      } catch (e) {
+        showError('The link appears to be corrupted or incomplete.');
+      }
+    })();
+  </script>
+</body>
+</html>
