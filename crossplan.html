@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrossPlan – Personal Command Center | Longevity Health Analytics</title>
+  <meta name="description" content="CrossPlan unifies your email, calendar, and tasks into a single workspace for macOS, iPadOS, and iOS. Built for couples and individuals who want one place for everything.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .crossplan-hero {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .crossplan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(79, 70, 229, 0.15));
+      color: #6366f1;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      margin-bottom: 1.5rem;
+    }
+
+    .crossplan-badge .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #6366f1;
+      box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+    }
+
+    .crossplan-hero h1 {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #6366f1, #4f46e5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .crossplan-hero-subtitle {
+      font-size: 1.35rem;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+
+    .crossplan-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .crossplan-content h2 {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .crossplan-content p {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .crossplan-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .crossplan-feature-card {
+      padding: 1.5rem;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .crossplan-feature-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(99, 102, 241, 0.35);
+    }
+
+    .crossplan-feature-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .crossplan-feature-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .crossplan-feature-card p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .crossplan-availability {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+    }
+
+    .crossplan-availability h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    .crossplan-availability p {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .crossplan-doc-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .crossplan-doc-link {
+      display: inline-block;
+      padding: 0.6rem 1.5rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #6366f1;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .crossplan-doc-link:hover {
+      background: rgba(99, 102, 241, 0.18);
+      border-color: rgba(99, 102, 241, 0.45);
+    }
+
+    @media (max-width: 768px) {
+      .crossplan-hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .crossplan-hero h1 {
+        font-size: 2.75rem;
+      }
+
+      .crossplan-hero-subtitle {
+        font-size: 1.1rem;
+      }
+
+      .crossplan-feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .crossplan-content {
+        padding: 0 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/lha-logo.png" alt="Longevity Health Analytics" class="logo-img">
+        <span class="logo-text">Longevity<span class="logo-accent">HA</span></span>
+      </a>
+      <ul>
+        <li><a href="index.html">Apps</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="cortex.html">Cortex</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="crossplan-hero">
+      <div class="crossplan-badge">
+        <span class="pulse-dot"></span>
+        <span>In Development</span>
+      </div>
+      <h1>CrossPlan</h1>
+      <p class="crossplan-hero-subtitle">
+        Your personal command center for email, calendar, and tasks — unified in one workspace, on every Apple device.
+      </p>
+    </section>
+
+    <section class="crossplan-content">
+      <p>CrossPlan is a native macOS, iPadOS, and iOS application that brings together the parts of daily life that usually live in separate apps. Multiple email accounts across Gmail and Microsoft 365. Every calendar you've subscribed to on your device. Your system reminders alongside CrossPlan's own task manager. One workspace, one keyboard shortcut to anything.</p>
+
+      <p>Built with the same principles as every Longevity Health Analytics app: your data stays on your device. No servers. No analytics. No tracking. Connections to Gmail and Microsoft 365 happen directly from your machine; tasks sync only through your personal iCloud. CrossPlan is private by construction.</p>
+
+      <div class="crossplan-feature-grid">
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">📧</div>
+          <h4>Unified Inbox</h4>
+          <p>Read, reply, archive, and search across every connected mailbox — Gmail and Microsoft 365 — in a single Gmail-style threaded view, color-coded by account.</p>
+        </div>
+
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">📅</div>
+          <h4>Calendar at a Glance</h4>
+          <p>Day and week views over every calendar your device knows about — iCloud, Google, Microsoft Exchange, ICS subscriptions, family calendars. Create and edit events with the right recurrence semantics.</p>
+        </div>
+
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">✅</div>
+          <h4>Tasks That Add Up</h4>
+          <p>System reminders from every source (iCloud, Exchange, On My Mac) merge with CrossPlan's own task manager. Smart lists for Today, This Week, Overdue, and Later. Categories, priorities, subtasks.</p>
+        </div>
+
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">🔒</div>
+          <h4>Private by Construction</h4>
+          <p>OAuth tokens stored in the system Keychain. Email cached locally only, never synced. Tasks live in your personal iCloud — partitioned per profile. No telemetry, no third-party trackers, no ads.</p>
+        </div>
+
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">👥</div>
+          <h4>Built for Two</h4>
+          <p>Designed for couples and individuals managing multiple identities — separate profiles with isolated email, tasks, and categories on the same Mac. A shared family calendar visible to both.</p>
+        </div>
+
+        <div class="crossplan-feature-card">
+          <div class="crossplan-feature-icon">🧠</div>
+          <h4>Claude-Powered Triage</h4>
+          <p>Coming soon: opt-in AI assistance for inbox triage, reply drafting, and a daily briefing — powered by Anthropic's Claude API. Off by default; on only when you flip the switch.</p>
+        </div>
+      </div>
+
+      <div class="crossplan-availability">
+        <h3>Availability</h3>
+        <p>CrossPlan is currently in active development as a personal tool. It is not yet available on the App Store. This page exists so the underlying email integrations have a public home for their OAuth consent flows.</p>
+        <div class="crossplan-doc-links">
+          <a href="privacy-crossplan.html" class="crossplan-doc-link">Privacy Policy</a>
+          <a href="terms-crossplan.html" class="crossplan-doc-link">Terms of Service</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Longevity Health Analytics. All rights reserved.</p>
+      <p class="footer-tagline">Built with intention. Designed for longevity.</p>
+    </div>
+  </footer>
+</body>
+</html>

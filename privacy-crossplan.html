@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CrossPlan Privacy Policy – Longevity Health Analytics</title>
+  <meta name="description" content="Privacy policy for CrossPlan, a personal command center for email, calendar, and tasks by Longevity Health Analytics.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .privacy-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .privacy-section h1 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .privacy-updated {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin-bottom: 3rem;
+    }
+
+    .privacy-section h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-text);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .privacy-section p {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .privacy-section ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .privacy-section ul li {
+      font-size: 1.05rem;
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .privacy-section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-text-muted);
+    }
+
+    .privacy-section a {
+      color: var(--color-accent-teal);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .privacy-section a:hover {
+      opacity: 0.8;
+    }
+
+    .privacy-apps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .privacy-app-tag {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tag-crossplan {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(79, 70, 229, 0.15));
+      color: #6366f1;
+      border: 1px solid rgba(99, 102, 241, 0.25);
+    }
+
+    @media (max-width: 768px) {
+      .privacy-section h1 {
+        font-size: 2.25rem;
+      }
+
+      .privacy-section {
+        padding: 4rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="index.html" class="logo">
+        <img src="images/lha-logo.png" alt="Longevity Health Analytics" class="logo-img">
+        <span class="logo-text">Longevity<span class="logo-accent">HA</span></span>
+      </a>
+      <ul>
+        <li><a href="index.html">Apps</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="cortex.html">Cortex</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="privacy-section">
+      <h1>CrossPlan Privacy Policy</h1>
+      <p class="privacy-updated">Last updated: May 26, 2026</p>
+
+      <div class="privacy-apps">
+        <span class="privacy-app-tag tag-crossplan">CrossPlan — Personal Command Center</span>
+      </div>
+
+      <p>This privacy policy applies to CrossPlan ("the app"), a personal command center for email, calendar, and tasks published by Longevity Health Analytics ("we", "our", "us"). CrossPlan unifies multiple email accounts, system calendars, and tasks into a single workspace. We built CrossPlan with the same principle as all our apps: your data belongs to you and only you.</p>
+
+      <h2>What CrossPlan Does</h2>
+      <p>CrossPlan is a native macOS, iPadOS, and iOS application that aggregates content from email providers (Google and Microsoft) and the operating system's Calendar and Reminders databases. The app presents this content in a unified interface for personal productivity. CrossPlan does not operate any servers — every connection is made directly from your device to the relevant service provider.</p>
+
+      <h2>Email Account Authorization</h2>
+      <p>CrossPlan uses OAuth 2.0 with PKCE to connect to your email accounts. Two providers are supported:</p>
+      <ul>
+        <li><strong>Google (Gmail)</strong> — for personal and Google Workspace mailboxes, via the official Gmail API</li>
+        <li><strong>Microsoft 365</strong> — for Outlook.com and Microsoft Exchange Online mailboxes, via the official Microsoft Graph API</li>
+      </ul>
+      <p>When you connect an account, you authenticate directly with Google or Microsoft on their own sign-in pages. CrossPlan never sees your account password — authentication is handled entirely by the provider's servers. Upon successful sign-in, the provider issues an access token and refresh token, which CrossPlan stores in the macOS Keychain (or iOS Keychain) on your device. You can disconnect any account at any time from CrossPlan's Settings, which immediately deletes the stored tokens and cached messages.</p>
+
+      <h2>Data Accessed from Google (Gmail)</h2>
+      <p>With your permission, CrossPlan requests the following OAuth scopes from Google:</p>
+      <ul>
+        <li><code>gmail.modify</code> — to read messages in your inbox, mark messages as read or unread, archive messages, and apply or remove labels</li>
+        <li><code>gmail.send</code> — to send replies, forwards, and new messages on your behalf when you compose them in CrossPlan</li>
+        <li><code>userinfo.email</code> and <code>userinfo.profile</code> — to display your account's email address and name within CrossPlan's account list</li>
+      </ul>
+      <p>CrossPlan's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements. We do not transfer your Google data to any third party except as required to provide or improve user-facing features that are prominent in CrossPlan's user interface. We do not use your Google data to serve advertisements. We do not allow humans to read your Google data unless we have your affirmative agreement for specific messages, doing so is necessary for security purposes such as investigating abuse, to comply with applicable law, or for CrossPlan's internal operations subject to aggregation or anonymization.</p>
+
+      <h2>Data Accessed from Microsoft (Graph API)</h2>
+      <p>With your permission, CrossPlan requests the following Microsoft Graph permissions:</p>
+      <ul>
+        <li><code>Mail.ReadWrite</code> — to read messages in your inbox, mark messages as read or unread, move messages to the Archive folder, and move messages to the Deleted Items folder</li>
+        <li><code>Mail.Send</code> — to send replies, forwards, and new messages on your behalf when you compose them in CrossPlan</li>
+        <li><code>User.Read</code> — to display your account's email address and name within CrossPlan's account list</li>
+        <li><code>offline_access</code> — to refresh the access token automatically so you don't have to sign in repeatedly</li>
+      </ul>
+
+      <h2>Calendar and Reminders Access</h2>
+      <p>CrossPlan uses Apple's EventKit framework to read from and write to your device's Calendar and Reminders databases, with your explicit permission. This includes events and reminders from every source you have configured on your device — iCloud, Google Calendar (via the system Calendar app), Microsoft Exchange (via the system Calendar / Reminders app), and any other CalDAV source. CrossPlan does not connect to these calendar or reminder servers directly; it reads only what your operating system has already synced. All calendar and reminder data is read and written on-device through EventKit and is governed by macOS's and iOS's privacy controls in System Settings.</p>
+
+      <h2>On-Device Storage</h2>
+      <p>All email metadata fetched from providers is cached locally on your device in a private SwiftData store. The cache exists only to make the inbox responsive — it is never transmitted off-device. Your CrossPlan-native tasks, categories, and profiles are stored in Apple's CloudKit infrastructure under your personal iCloud account, scoped to a private database that only you can access. This sync is handled entirely by Apple and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. We never have access to this data. Email messages are explicitly excluded from CloudKit sync and remain on each device they are fetched on.</p>
+
+      <h2>Multi-Profile Support</h2>
+      <p>CrossPlan supports multiple user profiles on the same installation (e.g., for couples sharing a Mac). Each profile has its own separate email accounts, tasks, categories, and Keychain entries. Profile data is strictly isolated — one profile cannot read another profile's email, tasks, or accounts. When CrossPlan is used by two people, each person typically uses their own Apple ID, which provides additional separation at the CloudKit and EventKit level.</p>
+
+      <h2>Token Storage and Security</h2>
+      <p>OAuth access tokens and refresh tokens are stored in the operating system's Keychain, the same secure storage Apple uses for passwords and credit card information. Tokens are scoped to a per-account identifier within CrossPlan and are never transmitted to any server we operate. Disconnecting an account in CrossPlan's Settings deletes the corresponding Keychain entry immediately.</p>
+
+      <h2>Data Collection</h2>
+      <p>CrossPlan does not collect, transmit, or store any personal data on external servers. We do not require account creation with us, email addresses, or any form of registration to use the app. There is no analytics, tracking, or telemetry of any kind. We do not use cookies. We do not fingerprint your device.</p>
+
+      <h2>Third-Party Services</h2>
+      <p>CrossPlan connects only to the third-party services you explicitly authorize — Google Gmail, Microsoft Graph, and (in future versions) the Anthropic Claude API for optional AI-assisted features. Beyond these integrations, the app does not communicate with any third-party services. There are no analytics providers, advertising networks, or data brokers. There are no ads. There are no in-app purchases. There is no monetization of your data in any form.</p>
+
+      <h2>AI-Assisted Features (Future)</h2>
+      <p>A future version of CrossPlan will offer optional AI-assisted features powered by the Anthropic Claude API — including email triage suggestions, draft reply assistance, and a daily briefing. These features will be opt-in. When you enable them, the relevant email snippets, calendar events, and task titles will be sent to Anthropic's servers for processing under <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic's Privacy Policy</a>. Anthropic does not use API inputs to train its models. You will be able to disable these features at any time from CrossPlan's Settings, after which no data will be sent to Anthropic.</p>
+
+      <h2>Data Sharing</h2>
+      <p>We do not share, sell, rent, or disclose your data to any third party. Period. Your email, calendar, tasks, and authentication tokens never leave your device except through the authorized service connections you have explicitly enabled.</p>
+
+      <h2>Data Deletion</h2>
+      <p>Since all data is stored locally on your device (and, for tasks, in your personal iCloud), deleting the app removes all locally cached data. You can also disconnect any email account from CrossPlan's Settings at any time, which deletes the stored Keychain credentials and purges the cached messages for that account. To revoke CrossPlan's access at the provider level, visit your Google Account permissions page or your Microsoft account permissions page and remove CrossPlan from the list of connected apps.</p>
+
+      <h2>Children's Privacy</h2>
+      <p>CrossPlan is not directed at children under the age of 13 and does not knowingly collect any information from anyone, including children. Since no personal data is collected from any user, the app is compliant with the Children's Online Privacy Protection Act (COPPA).</p>
+
+      <h2>Changes to This Policy</h2>
+      <p>If we update this policy, the changes will be reflected on this page with an updated date. Because CrossPlan does not collect contact information, we are unable to notify users directly of changes. We encourage you to review this page periodically.</p>
+
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, you can reach us at <a href="mailto:manny@legitledger.io">manny@legitledger.io</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Longevity Health Analytics. All rights reserved.</p>
+      <p class="footer-tagline">Built with intention. Designed for longevity.</p>
+    </div>
+  </footer>
+</body>
+</html>
